@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# auth-with-firebase
 
-## Getting Started
+Este projeto demonstra como implementar autenticação de usuários utilizando o Firebase Authentication em uma aplicação React/Next.js. Ele serve como exemplo prático de integração com um backend NoSQL (Firebase) e autenticação segura, ideal para mostrar habilidades em integração de serviços externos e manipulação de dados em tempo real.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **Login e autenticação de usuários** via Firebase Authentication.
+- **Gerenciamento de estado do usuário** com Context API do React (
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+AuthContext
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+).
+- **Integração com Firebase** usando configuração dinâmica via variáveis de ambiente.
+- **Exemplo de uso de NoSQL** (Firebase Firestore pode ser facilmente integrado).
+- **Carregamento dinâmico** enquanto o estado de autenticação é verificado.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Estrutura
 
-## Learn More
+- 
 
-To learn more about Next.js, take a look at the following resources:
+src/context/AuthContext.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+: Contexto React para autenticação.
+- 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+src/firebase/config.js
 
-## Deploy on Vercel
+: Inicialização do Firebase usando variáveis de ambiente.
+- `.env`: Armazena as credenciais do Firebase (não incluídas no repositório público).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Como usar
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Configure suas credenciais do Firebase no arquivo `.env`.
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Inicie o projeto:
+   ```sh
+   npm run dev
+   ```
+
+## Observações
+
+- **Segurança:** As credenciais do Firebase devem ser mantidas apenas no `.env` e nunca expostas publicamente.
+- **Extensível:** Pode ser facilmente adaptado para incluir Firestore, Storage, ou outros serviços do Firebase.
